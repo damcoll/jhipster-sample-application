@@ -1,0 +1,63 @@
+
+application {
+  config {
+    baseName myApp,
+    applicationType monolith,
+    packageName com.myapp,
+    authenticationType jwt,
+    prodDatabaseType postgresql,
+    clientFramework angular
+  }
+  entities *
+}
+
+relationship OneToMany {
+  B to A
+}
+  
+entity Village {
+	Integer Or
+    Integer GenHero
+    Integer Soin
+}
+
+entity Hero {
+	Integer Attaque
+    Integer Defence
+    Integer Vie
+    Integer Experiance
+    Integer Niveau
+    String Nom
+}
+
+entity Groupe {}
+
+entity Donjon {}
+
+entity Monstre {
+	Integre Attaque
+    Integre Defence
+    Integre Vie
+    Integre Exp
+    Integre Nom
+}
+
+entity Tresort {
+	Integre Or
+}
+
+entity PiecesDuDonjon {
+	
+}
+
+relationship OneToMany {
+	Hero to Village
+    Hero to Groupe
+}
+
+relationship ManyToMany {
+	Groupe to Donjon
+    Donjon to PiecesDuDonjon
+    Monstre to PiecesDuDonjon
+    Tresort to PiecesDuDonjon
+}
